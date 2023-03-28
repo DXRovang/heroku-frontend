@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {Route, Routes, useParams} from 'react-router-dom'
 import { connect } from 'react-redux'
 import DrawForm from '../components/DrawForm'
 import DrawList from '../components/DrawList'
@@ -9,7 +9,8 @@ import { fetchDraws } from '../actions/fetchDraws'
 import { fetchCards } from '../actions/fetchCards'
 
 const DrawWrapper = ({ cards, draws, ...routerProps }) => {
-  return <Draw cards={cards} draws={draws} {...routerProps} />
+  const {id} = useParams();
+  return <Draw cards={cards} draws={draws} id={id} {...routerProps} />
 }
 
 class DrawsContainer extends React.Component{
