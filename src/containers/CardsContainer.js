@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { connect } from "react-redux";
 import CardList from "../components/CardList";
 import Card from "../components/Card";
@@ -15,9 +15,10 @@ class CardsContainer extends React.Component {
   render() {
     return (
       <>
-        <Switch>
-          <Route exact path="/cards">
-            <CardList cards={this.props.cards} />
+        <Routes>
+          <Route 
+          exact path="/cards" 
+          element={<CardList cards={this.props.cards} />}>
           </Route>
           <Route
             path="/cards/:id"
@@ -25,14 +26,19 @@ class CardsContainer extends React.Component {
               <Card {...routerProps} cards={this.props.cards} />
             )}
           />
-          <Route path="/majorarcana">
-            <MajorArcana cards={this.props.cards} />
+          <Route 
+          exact path="/majorarcana"
+          element={<MajorArcana cards={this.props.cards} />}
+          >
+            
           </Route>
-          {/* <Route path={process.env.PUBLIC_URL +'/minorarcana'}> */}
-          <Route exact path="/minorarcana">
-            <MinorArcana cards={this.props.cards} />
+          <Route 
+          exact path="/minorarcana"
+          element={<MinorArcana cards={this.props.cards} />}
+          >
+            
           </Route>
-        </Switch>
+        </Routes>
       </>
     );
   }

@@ -1,18 +1,18 @@
 import React from 'react';
-// import DrawsContainer from './containers/DrawsContainer'
-// import CardsContainer from './containers/CardsContainer'
-// import NavBar from './NavBar'
+import DrawsContainer from './containers/DrawsContainer'
+import CardsContainer from './containers/CardsContainer'
+import NavBar from './NavBar'
 class App extends React.Component {
 
   render(){
     return (
       <div className="App">
-        {/* <NavBar/> */}
+        <NavBar/>
           <div className="title">
             the Tarot Trove
           </div>
-        {/* <DrawsContainer /> */}
-        {/* <CardsContainer /> */}
+        <DrawsContainer />
+        <CardsContainer />
       </div>
     );
   }

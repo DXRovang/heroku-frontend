@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import { connect } from 'react-redux'
 import DrawForm from '../components/DrawForm'
 import DrawList from '../components/DrawList'
@@ -19,7 +19,7 @@ componentDidMount(){
     render(){
       return(
         <>
-          <Switch>
+          <Routes>
             <Route path='/draws/new' render={(routerProps) => 
                 <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
             <Route exact path='/draws' render={(routerProps) => 
@@ -29,7 +29,7 @@ componentDidMount(){
                 <Draw {...routerProps} cards={this.props.cards} draws={this.props.draws} />
               </> 
             }/>
-          </Switch>
+          </Routes>
         </>
       )
     }
