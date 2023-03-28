@@ -8,6 +8,9 @@ import Draw from '../components/Draw'
 import { fetchDraws } from '../actions/fetchDraws'
 import { fetchCards } from '../actions/fetchCards'
 
+const DrawWrapper = ({ cards, draws, ...routerProps }) => {
+  return <Draw cards={cards} draws={draws} {...routerProps} />
+}
 
 class DrawsContainer extends React.Component{
 
@@ -20,15 +23,16 @@ componentDidMount(){
       return(
         <>
           <Routes>
-            <Route path='/draws/new' render={(routerProps) => 
-                <DrawForm {...routerProps} cards={this.props.cards} draws={this.props.draws} />} /> 
-            <Route exact path='/draws' render={(routerProps) => 
-                <DrawList {...routerProps} draws={this.props.draws} />} />
-            <Route path='/draws/:id' render={(routerProps) => 
-              <>
-                <Draw {...routerProps} cards={this.props.cards} draws={this.props.draws} />
-              </> 
-            }/>
+            <Route path='/draws/new' element={
+                <DrawForm cards={this.props.cards} draws={this.props.draws} />} /> 
+            <Route exact path='/draws' element={ 
+                <DrawList draws={this.props.draws} />} />
+ <Route path='/draws/:id' element={
+  <DrawWrapper 
+    cards={this.props.cards} 
+    draws={this.props.draws} 
+  />
+} />
           </Routes>
         </>
       )
