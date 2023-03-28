@@ -89,7 +89,7 @@ class DrawForm extends React.Component {
       orientations: this.renderBool(num),
     };
     this.props.createDraws(formData);
-    this.props.history.push('/draws')
+    // this.props.history.push('/draws')
   };
 
   getCards = (arr, num) => {
