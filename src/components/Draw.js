@@ -3,7 +3,15 @@ import { Link } from "react-router-dom";
 import InterpretationsContainer from "../containers/InterpretationsContainer";
 import { Container, Row, Col } from "reactstrap";
 
+
 const Draw = (props) => {
+
+
+  const { match } = props;
+
+if (!match) {
+  return <div>No match found for this route</div>;
+}
   let draw = props.draws.draws.find((draw) => draw.id == props.match.params.id);
 
   if (draw && draw.layout != "Celtic Cross") {

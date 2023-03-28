@@ -27,12 +27,12 @@ componentDidMount(){
                 <DrawForm cards={this.props.cards} draws={this.props.draws} />} /> 
             <Route exact path='/draws' element={ 
                 <DrawList draws={this.props.draws} />} />
- <Route path='/draws/:id' element={
-  <DrawWrapper 
-    cards={this.props.cards} 
-    draws={this.props.draws} 
-  />
-} />
+            <Route path='/draws/:id' element={
+              <DrawWrapper 
+                cards={this.props.cards} 
+                draws={this.props.draws} 
+              />
+          } />
           </Routes>
         </>
       )
