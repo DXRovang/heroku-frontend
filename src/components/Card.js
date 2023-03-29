@@ -1,8 +1,11 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 
 const Card = props =>{
-  debugger
-  let card = props.cards[props.match.params.id]
+  const location = useLocation();
+  const id = parseInt(location.pathname.slice(7))
+  let card = props.cards[id]
+
   
   return(
     <div className="single">

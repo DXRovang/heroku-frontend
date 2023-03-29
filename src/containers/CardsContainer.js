@@ -21,11 +21,11 @@ class CardsContainer extends React.Component {
           element={<CardList cards={this.props.cards} />}>
           </Route>
           <Route
-            path="/cards/:id"
-            render={(routerProps) => (
-              <Card {...routerProps} cards={this.props.cards} />
-            )}
-          />
+            exact path="/cards/:id"
+            element={
+              <Card cards={this.props.cards} />
+            }
+          ></Route>
           <Route 
           exact path="/majorarcana"
           element={<MajorArcana cards={this.props.cards} />}
