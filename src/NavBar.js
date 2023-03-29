@@ -13,7 +13,7 @@ return (<>
 <Navbar dark expand="md">
 <Nav className="mr-auto" navbar>
             <NavItem>
-  <NavLink href={process.env.PUBLIC_URL +'/draws'}>Readings</NavLink>
+  <NavLink href={process.env.PUBLIC_URL +'/'}>Readings</NavLink>
   </NavItem>
   <NavItem>
   <NavLink href={process.env.PUBLIC_URL +"/draws/new"}>New Draw</NavLink>

@@ -26,7 +26,7 @@ componentDidMount(){
           <Routes>
             <Route path='/draws/new' element={
                 <DrawForm cards={this.props.cards} draws={this.props.draws} />} /> 
-            <Route exact path='/draws' element={ 
+            <Route exact path='/' element={ 
                 <DrawList draws={this.props.draws} />} />
             <Route path='/draws/:id' element={
               <DrawWrapper 

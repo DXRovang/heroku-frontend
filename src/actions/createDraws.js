@@ -1,7 +1,7 @@
 export const createDraws = (formData) =>{
   return (dispatch) => {
-    // fetch('https://tarot-trove-backend.herokuapp.com/api/v1/draws', {
-      fetch('http://127.0.0.1:3000/draws', {
+    fetch('https://tarot2023-backend.herokuapp.com/draws', {
+      // fetch('http://127.0.0.1:3000/draws', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
