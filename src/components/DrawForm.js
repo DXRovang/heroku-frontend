@@ -10,6 +10,7 @@ import tarotb from "../assets/tarotb.jpg";
 const DrawForm = (props) => {
   const navigate = useNavigate();
   const cards = props.cards
+  const draws_id = props.draws.draws.length + 1
   const dispatch = useDispatch()
   const [layout, setLayout] = useState("One-Card");
 
@@ -27,7 +28,7 @@ const DrawForm = (props) => {
       orientations: renderBool(num),
     };
     dispatch(createDraws(formData));
-    navigate('/draws')
+    navigate(`/draws/${draws_id}`)
   };
 
   const getCards = (arr, num) => {
