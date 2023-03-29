@@ -28,9 +28,9 @@ class InterpretationForm extends React.Component{
       <div className="Field">
         <form onSubmit={e => this.handleSubmit(e)}>
           <textarea onChange={this.handleChange} 
-          type='text' name="body" value={this.state.body}/><br></br>
+          type='text' name="body" value={this.state.body}/><br></br> 
           {/* name should match what's in the state */}
-          <button>Submit Interpretation</button>
+            <button>Submit Interpretation</button> 
         </form>
   {/* onSubmit and onChange are identical, the event isn't necessary */}
       </div>

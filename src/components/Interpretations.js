@@ -23,7 +23,7 @@ class Interpretations extends React.Component{
         <div key={interpretation.id}>
           
           <button onClick={() => this.handleDelete(interpretation)}>x</button> {interpretation.body}
-          {/* <Button /> */}
+          <Button />
           </div>) : null}<br></br>
     </div>
   )

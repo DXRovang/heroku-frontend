@@ -5,9 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 
 
 const Draw = (props) => {
-
   let draw = props.draws.draws.find((draw) => draw.id == props.id);
-
   if (draw && draw.layout != "Celtic Cross") {
     return (
       <div className="notCross">
